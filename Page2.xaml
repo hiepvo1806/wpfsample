@@ -10,6 +10,6 @@
 
     <Grid>
         <TextBlock Text="Page 2" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-        <Button Content="Previous" Click="OnPreviousClick" Height="100" Width="150" Margin="326,263,324,87"></Button>
+        <Button Content="Previous" Click="OnPreviousClick" Margin="325,244,325,126"></Button>
     </Grid>
 </Page>
