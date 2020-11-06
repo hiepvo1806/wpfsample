@@ -9,7 +9,7 @@
       Title="Page1">
 
     <Grid>
-        <TextBlock Text="Dis con me Pyco" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="120"></TextBlock>
-        <Button Content="Next" Click="OnNextClick"></Button>
+        <TextBlock Text="Dis con me Pyco" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <Button Content="Next" Click="OnNextClick" Height="80" Width="150" Margin="330,211,320,159"></Button>
     </Grid>
 </Page>
