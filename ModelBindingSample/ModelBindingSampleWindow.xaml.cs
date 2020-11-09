@@ -19,8 +19,12 @@ namespace WpfHVApp.Window
     /// </summary>
     public partial class ModelBindingSampleWindow
     {
+        public string Department { get; set; }
+        public string YourName { get; set; }
         public ModelBindingSampleWindow()
         {
+            Department = "Yo ass Department";
+            YourName = "Yo ass name";
             InitializeComponent();
         }
     }

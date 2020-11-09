@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfHVApp.Window"
         mc:Ignorable="d"
-        Title="ModelBindingSampleWindow" Height="450" Width="800">
+        Title="ModelBindingSampleWindow" Height="450" Width="800"
+        x:Name="windowModelSample"
+        >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -17,6 +19,13 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
+        <!--Row 0 -->
         <TextBlock Text="From Model Binding Sample" Grid.Column="0" Grid.Row="0"></TextBlock>
+        <!--Row 1 -->
+        <TextBlock Text="Your Department" Grid.Row="1"  Grid.Column="0" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="{Binding Department, ElementName=windowModelSample}" Margin="0 2" Grid.Row="1" Grid.Column="1"></TextBlock>
+        <!--Row 2 -->
+        <TextBlock Text="Your Name" Grid.Row="2"  Grid.Column="0" HorizontalAlignment="Center"></TextBlock>
+        <TextBlock Text="{Binding YourName, ElementName=windowModelSample}" Margin="0 2" Grid.Row="2" Grid.Column="1"></TextBlock>
     </Grid>
 </Window>
