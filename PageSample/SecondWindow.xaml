@@ -1,4 +1,4 @@
-﻿<NavigationWindow x:Class="WpfApp1.SecondWindow"
+﻿<NavigationWindow x:Class="WpfHVApp.SecondWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,7 +8,4 @@
         Height="450" 
         Width="800"
         Source="Page1.xaml" >
-    <!--<Grid>
-        <TextBlock Text="Second Window Instance" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"></TextBlock>
-    </Grid>-->
 </NavigationWindow>

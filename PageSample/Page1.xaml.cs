@@ -12,30 +12,23 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfHVApp.Window;
 
 namespace WpfHVApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class Page1 : Page
     {
-        public MainWindow()
+        public Page1()
         {
             InitializeComponent();
         }
 
-        private void OnSecondWindowButtonClicked(object sender, RoutedEventArgs e)
-        {
-            var window = new SecondWindow();
-            window.Show();
-        }
 
-        private void OnModelBindingSampleClicked(object sender, RoutedEventArgs e)
+        private void OnNextClick(object sender, RoutedEventArgs e)
         {
-            var window = new ModelBindingSampleWindow();
-            window.Show();
+            NavigationService.Navigate(new Uri("PageSample\\Page2.xaml", UriKind.Relative));
         }
     }
 }

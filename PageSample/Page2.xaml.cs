@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace WpfApp1
+namespace WpfHVApp
 {
     /// <summary>
     /// Interaction logic for Page2.xaml

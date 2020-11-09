@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfHVApp.Window
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for ModelBindingSampleWindow.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class ModelBindingSampleWindow
     {
-        public Page1()
+        public ModelBindingSampleWindow()
         {
             InitializeComponent();
-        }
-
-
-        private void OnNextClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("Page2.xaml", UriKind.Relative));
         }
     }
 }
