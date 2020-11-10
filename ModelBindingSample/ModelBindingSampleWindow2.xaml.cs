@@ -18,42 +18,31 @@ namespace WpfHVApp.Window
     /// <summary>
     /// Interaction logic for ModelBindingSampleWindow.xaml
     /// </summary>
-    public partial class ModelBindingSampleWindow : INotifyPropertyChanged
+    public partial class ModelBindingSampleWindow2 
     {
         public string Department { get; set; }
-        private string _yourName;
         public string YourName
         {
-            get
-            {
-                return _yourName;
-            }
-            set
-            {
-                _yourName = value;
-                OnPropertyChanged("YourName");
-            }
+            get { return (string)GetValue(YourNameProperty); }
+            set { SetValue(YourNameProperty, (string)value); }
         }
-        public ModelBindingSampleWindow()
+
+        // Using a DependencyProperty as the backing store for YourName.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty YourNameProperty =
+            DependencyProperty.Register("YourName", typeof(string), typeof(ModelBindingSampleWindow2), new PropertyMetadata(string.Empty));
+        public ModelBindingSampleWindow2()
         {
             Department = "Yo ass Department";
-            YourName = "Yo ass name";
+            YourName ="Yo Initial ass name";
             InitializeComponent();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
-        }
-        private void ReadPropertyHandler(object sender, RoutedEventArgs e)
+        private void OnReadPropertyBtnClicked(object sender, RoutedEventArgs e)
         {
             MessageBox.Show($"Department: {Department}; YourName: {YourName}");
         }
 
-        private void ResetPropertyHandler(object sender, RoutedEventArgs e)
+        private void OnResetBtnClicked(object sender, RoutedEventArgs e)
         {
             YourName = "It's changed yo";
         }

@@ -37,5 +37,11 @@ namespace WpfHVApp
             var window = new ModelBindingSampleWindow();
             window.Show();
         }
+
+        private void OnModelBindingSample2Clicked(object sender, RoutedEventArgs e)
+        {
+            var window = new ModelBindingSampleWindow2();
+            window.Show();
+        }
     }
 }
