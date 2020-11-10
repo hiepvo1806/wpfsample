@@ -7,7 +7,45 @@
         mc:Ignorable="d"
         Title="GridBindingExampleWindow" Height="450" Width="800">
     <StackPanel>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True"></DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock Text="Filter the grid"></TextBlock>
+            <TextBox x:Name="filterBox" TextChanged="OnFilterTextChanged" Width="100"></TextBox>
+        </StackPanel>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="True" CanUserAddRows="False">
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Margin" Value="0,0,0,5"></Setter>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                                        <Expander IsExpanded="True">
+                                            <Expander.Header>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding Path=Name}" Margin="5,0,0,0"></TextBlock>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Margin="5,0,0,0" Text="{Binding Path=ItemCount}"></TextBlock>
+                                                        <TextBlock Text=" Item(s)"></TextBlock>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                                
+                                            </Expander.Header>
+
+                                            <Expander.Content>
+                                                <ItemsPresenter></ItemsPresenter>
+                                            </Expander.Content>
+                                            
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+        </DataGrid>
         <Button Content="Click to sort" Click="OnSortClicked"></Button>
+        <Button Content="Click to group" Click="OnGroupClicked"></Button>
     </StackPanel>
 </Window>

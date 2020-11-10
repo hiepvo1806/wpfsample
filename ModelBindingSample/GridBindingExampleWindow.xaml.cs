@@ -47,14 +47,56 @@ namespace WpfApp1.ModelBindingSample
                 },
                 new Employee
                 {
-                    Department = "Z",
+                    Department = "HR Department",
                     FirstName = "A2",
                     Id = "I2",
                     LastName = "L2"
                 }, 
                 new Employee
                 {
-                    Department = "A",
+                    Department = "Finance Department",
+                    FirstName = "A3",
+                    Id = "I3",
+                    LastName = "L3"
+                },
+                new Employee
+                {
+                    Department = "HR Department",
+                    FirstName = "A2",
+                    Id = "I2",
+                    LastName = "L2"
+                },
+                new Employee
+                {
+                    Department = "IT Department",
+                    FirstName = "A3",
+                    Id = "I3",
+                    LastName = "L3"
+                },
+                new Employee
+                {
+                    Department = "HR Department",
+                    FirstName = "A2",
+                    Id = "I2",
+                    LastName = "L2"
+                },
+                new Employee
+                {
+                    Department = "IT Department",
+                    FirstName = "A3",
+                    Id = "I3",
+                    LastName = "L3"
+                },
+                new Employee
+                {
+                    Department = "HR Department",
+                    FirstName = "A2",
+                    Id = "I2",
+                    LastName = "L2"
+                },
+                new Employee
+                {
+                    Department = "Finance Department",
                     FirstName = "A3",
                     Id = "I3",
                     LastName = "L3"
@@ -71,6 +113,35 @@ namespace WpfApp1.ModelBindingSample
                 cvs.SortDescriptions.Clear();
                 cvs.SortDescriptions.Add(new SortDescription("Department", ListSortDirection.Descending));
             }
+        }
+
+        private void OnGroupClicked(object sender, RoutedEventArgs e)
+        {
+            var cvs = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
+            if (cvs != null && cvs.CanGroup)
+            {
+                cvs.GroupDescriptions.Clear();
+                cvs.GroupDescriptions.Add(new PropertyGroupDescription("Department"));
+            }
+        }
+
+        private void OnFilterTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var cvs = CollectionViewSource.GetDefaultView(dataGrid.ItemsSource);
+            if (cvs != null && cvs.CanFilter)
+            {
+                cvs.Filter = OnFilteredApplied;
+            }
+        }
+
+        private bool OnFilteredApplied(object obj)
+        {
+            if (obj is Employee emp)
+            {
+                var searchText = filterBox.Text.ToLower();
+                return emp.FirstName.ToLower().Contains(searchText) || emp.Department.ToLower().Contains(searchText) || emp.LastName.ToLower().Contains(searchText);
+            }
+            return false;
         }
     }
 }
