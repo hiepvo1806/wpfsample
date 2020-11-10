@@ -20,5 +20,6 @@
         <Button Content="Open Second window and Page View" Click="OnSecondWindowButtonClicked" Grid.Column="0" Grid.Row="0"  />
         <Button Content="Open Model Binding Sample" Grid.Column="1" Grid.Row="0" Click="OnModelBindingSampleClicked" ></Button>
         <Button Content="Open Model Binding Sample 2" Grid.Column="1" Grid.Row="1" Click="OnModelBindingSample2Clicked" ></Button>
+        <Button Content="Open Grid Binding" Grid.Column="0" Grid.Row="1" Click="OnGridBindingClicked" ></Button>
     </Grid>
 </Window>

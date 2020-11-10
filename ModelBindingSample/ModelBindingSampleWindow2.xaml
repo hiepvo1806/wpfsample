@@ -31,5 +31,6 @@
         <!--Row 3-->
         <Button Content="Read Property" Click="OnReadPropertyBtnClicked" Grid.Column="0" Grid.Row="3"></Button>
         <Button Content="Reset" Click="OnResetBtnClicked" Grid.Column="1" Grid.Row="3"></Button>
+        <TextBox Text="init content" Margin="0 2" Grid.Row="2" Grid.Column="2"  local:TextBoxExtensions.SelectOnFocus="True"></TextBox>
     </Grid>
 </Window>

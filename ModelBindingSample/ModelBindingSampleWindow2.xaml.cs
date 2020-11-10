@@ -21,6 +21,7 @@ namespace WpfHVApp.Window
     public partial class ModelBindingSampleWindow2 
     {
         public string Department { get; set; }
+        //Propdp
         public string YourName
         {
             get { return (string)GetValue(YourNameProperty); }

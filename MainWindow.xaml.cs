@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.ModelBindingSample;
 using WpfHVApp.Window;
 
 namespace WpfHVApp
@@ -41,6 +42,12 @@ namespace WpfHVApp
         private void OnModelBindingSample2Clicked(object sender, RoutedEventArgs e)
         {
             var window = new ModelBindingSampleWindow2();
+            window.Show();
+        }
+
+        private void OnGridBindingClicked(object sender, RoutedEventArgs e)
+        {
+            var window = new GridBindingExampleWindow();
             window.Show();
         }
     }
